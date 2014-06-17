@@ -14,5 +14,7 @@ The repo mainly contains the following files:
 
 ## Usage instructions
 
+To use the script within this repo we assume the following procedures:
+
 
 
