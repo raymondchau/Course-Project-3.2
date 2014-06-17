@@ -14,14 +14,14 @@ The different actitivies that each subject perform during the test. Variations i
 6. laying
 
 #### column 3 - column 68
-Column 3 to 68 contains means of various means and stand deviations columns from the original data set for each subject + activity combination. For example, column 3 is "body acc time x mean", which refers to the mean of the x axis time domain signal values from the body acceleration monitor.
+Column 3 to 68 contains means of various means and standard deviations columns from the original data set for each subject + activity combination. For example, column 3 is "body acc time x mean", which refers to the mean of the x axis time domain signal values from the body acceleration monitor.
 
 ## How data is tided up in this set
 ### Loading the data
-The data is downloaded from the following address: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip. Then the downloaded zip file is being extracted to a folder, where the R script will be placed into as well.
+The data is downloaded from the following address: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip. Then the downloaded zip file is being extracted to a folder, where the data clean up R script will be placed.
 
 ### Reading and merging the data
-Upon extract the file we find the following files under the folder:
+Extract the zip file and we find the following files under the folder:
 * /features.txt
 * /activity_labels.txt
 * /test/X_test.txt
@@ -53,7 +53,7 @@ Then we use multiples gsub function to replace the original column names by a mo
 Finally, using the above data set; use a 2 levels for loop:
 
 1. Iterate each subject + activity combination
-2. Subset the dataset so that it returns all set of the given subject + activity combination
+2. Subset the dataset so that it returns all rows of the given subject + activity combination
 3. Then for each column of this sub set, calculate the column mean and append it to a temporary data frame
 4. Append this column means data frame to a larger data frame after each iteration
 
@@ -63,6 +63,6 @@ Final data set can now be described as follows:
 * Having 68 cols * 180 rows
 * The first column is subject IDs
 * The second column is user activity (e.g. walking)
-* Column Column 3 to 68 contains means of various means and stand deviations columns from the original data set for each subject + activity combination
+* Column Column 3 to 68 contains means of various means and standard deviations columns from the original data set for each subject + activity combination
 
 Finally, export the data set to a file called 'tidyset.txt' in the same folder
